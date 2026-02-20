@@ -1,0 +1,26 @@
+{
+  "agents": {
+    "requirements_analyst_agent": {
+      "agent_id": "6998e3d4dfb56bc22e407f77",
+      "name": "Requirements Analyst Agent",
+      "node_id": "requirements_agent",
+      "agent_type": "json",
+      "has_image_output": false,
+      "has_voice": false,
+      "has_file_output": false
+    },
+    "poster_designer_agent": {
+      "agent_id": "6998e3d47acfd7d95876f94d",
+      "name": "Poster Designer Agent",
+      "node_id": "poster_agent",
+      "agent_type": "json",
+      "has_image_output": true,
+      "has_voice": false,
+      "has_file_output": false
+    }
+  },
+  "workflow_order": [
+    "requirements_analyst_agent",
+    "poster_designer_agent"
+  ]
+}

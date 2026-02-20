@@ -1,0 +1,70 @@
+{
+  "nodes": [
+    {
+      "id": "input_node",
+      "type": "Input",
+      "label": "Poster Brief Input",
+      "nodeCategory": "input"
+    },
+    {
+      "id": "requirements_agent",
+      "type": "Agent",
+      "label": "Requirements Analyst Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6998e3d4dfb56bc22e407f77",
+      "agent_config": {
+        "name": "Requirements Analyst Agent",
+        "description": "Analyzes user-provided poster brief (text, brand assets, purpose, platform) and produces a structured creative direction document including copy hierarchy, layout recommendations, platform dimensions, and audience-tailored messaging strategy",
+        "provider_id": "openai",
+        "model": "gpt-4.1",
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "image_output_config": null,
+        "voice_config": null,
+        "file_output": false,
+        "agent_type": "json"
+      }
+    },
+    {
+      "id": "poster_agent",
+      "type": "Agent",
+      "label": "Poster Designer Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6998e3d47acfd7d95876f94d",
+      "agent_config": {
+        "name": "Poster Designer Agent",
+        "description": "Takes the structured creative brief and generates a professional, brand-consistent, conversion-focused poster image matching the specified platform dimensions and design direction",
+        "provider_id": "google",
+        "model": "gemini-2.5-pro",
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "image_output_config": {
+          "model": "dall-e-3"
+        },
+        "voice_config": null,
+        "file_output": false,
+        "agent_type": "json"
+      }
+    },
+    {
+      "id": "output_node",
+      "type": "Output",
+      "label": "Generated Poster",
+      "nodeCategory": "end"
+    }
+  ],
+  "edges": [
+    {
+      "source": "input_node",
+      "target": "requirements_agent"
+    },
+    {
+      "source": "requirements_agent",
+      "target": "poster_agent"
+    },
+    {
+      "source": "poster_agent",
+      "target": "output_node"
+    }
+  ]
+}

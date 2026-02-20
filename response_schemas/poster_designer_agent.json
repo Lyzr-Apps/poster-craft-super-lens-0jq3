@@ -1,0 +1,38 @@
+{
+  "agent_name": "Poster Designer Agent",
+  "agent_id": "6998e3d47acfd7d95876f94d",
+  "description": "Takes the structured creative brief and generates a professional, brand-consistent, conversion-focused poster image matching the specified platform dimensions and design direction",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": true,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "AgentResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "design_description": { "type": "string" },
+          "design_notes": { "type": "string" }
+        },
+        "required": ["design_description", "design_notes"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "response_schema": {
+    "design_description": "string",
+    "design_notes": "string"
+  },
+  "module_outputs_example": {
+    "artifact_files": [
+      {
+        "file_url": "https://example.com/image.png"
+      }
+    ]
+  },
+  "image_output_config": {
+    "model": "dall-e-3"
+  }
+}

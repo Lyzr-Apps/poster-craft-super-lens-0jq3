@@ -1,0 +1,56 @@
+{
+  "agent_name": "Requirements Analyst Agent",
+  "agent_id": "6998e3d4dfb56bc22e407f77",
+  "description": "Analyzes user-provided poster brief (text, brand assets, purpose, platform) and produces a structured creative direction document including copy hierarchy, layout recommendations, platform dimensions, and audience-tailored messaging strategy",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "copy_hierarchy": {
+      "headline": "string",
+      "subhead": "string",
+      "body": "string",
+      "cta": "string"
+    },
+    "layout_direction": "string",
+    "platform_specs": {
+      "platform": "string",
+      "dimensions": "string",
+      "format": "string"
+    },
+    "audience_messaging": "string",
+    "color_typography": {
+      "primary_colors": "string",
+      "font_suggestions": "string"
+    },
+    "tone_alignment": "string"
+  },
+  "example_response": {
+    "copy_hierarchy": {
+      "headline": "sample string",
+      "subhead": "sample string",
+      "body": "sample string",
+      "cta": "sample string"
+    },
+    "layout_direction": "sample string",
+    "platform_specs": {
+      "platform": "sample string",
+      "dimensions": "sample string",
+      "format": "sample string"
+    },
+    "audience_messaging": "sample string",
+    "color_typography": {
+      "primary_colors": "sample string",
+      "font_suggestions": "sample string"
+    },
+    "tone_alignment": "sample string"
+  },
+  "has_module_outputs": true,
+  "module_outputs_example": {
+    "artifact_files": [
+      {
+        "file_url": "https://example.com/image.png"
+      }
+    ]
+  }
+}

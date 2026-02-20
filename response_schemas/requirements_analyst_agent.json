@@ -1,0 +1,75 @@
+{
+  "agent_name": "Requirements Analyst Agent",
+  "agent_id": "6998e3d4dfb56bc22e407f77",
+  "description": "Analyzes user-provided poster brief (text, brand assets, purpose, platform) and produces a structured creative direction document including copy hierarchy, layout recommendations, platform dimensions, and audience-tailored messaging strategy",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "AgentResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "copy_hierarchy": {
+            "type": "object",
+            "properties": {
+              "headline": { "type": "string" },
+              "subhead": { "type": "string" },
+              "body": { "type": "string" },
+              "cta": { "type": "string" }
+            },
+            "required": ["headline", "subhead", "body", "cta"],
+            "additionalProperties": false
+          },
+          "layout_direction": { "type": "string" },
+          "platform_specs": {
+            "type": "object",
+            "properties": {
+              "platform": { "type": "string" },
+              "dimensions": { "type": "string" },
+              "format": { "type": "string" }
+            },
+            "required": ["platform", "dimensions", "format"],
+            "additionalProperties": false
+          },
+          "audience_messaging": { "type": "string" },
+          "color_typography": {
+            "type": "object",
+            "properties": {
+              "primary_colors": { "type": "string" },
+              "font_suggestions": { "type": "string" }
+            },
+            "required": ["primary_colors", "font_suggestions"],
+            "additionalProperties": false
+          },
+          "tone_alignment": { "type": "string" }
+        },
+        "required": ["copy_hierarchy", "layout_direction", "platform_specs", "audience_messaging", "color_typography", "tone_alignment"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "response_schema": {
+    "copy_hierarchy": {
+      "headline": "string",
+      "subhead": "string",
+      "body": "string",
+      "cta": "string"
+    },
+    "layout_direction": "string",
+    "platform_specs": {
+      "platform": "string",
+      "dimensions": "string",
+      "format": "string"
+    },
+    "audience_messaging": "string",
+    "color_typography": {
+      "primary_colors": "string",
+      "font_suggestions": "string"
+    },
+    "tone_alignment": "string"
+  }
+}
